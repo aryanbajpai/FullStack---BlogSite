@@ -1,0 +1,362 @@
+
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(227, 227, 227);
+}
+
+.start {
+  display: flex;
+}
+
+.post {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.post:hover {
+  box-shadow: rgba(33, 33, 37, 0.2) 0px 7px 29px 0px;
+  cursor: pointer; transform: scale(1.03); transition-duration: 0.3s;
+}
+.post .title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: black;
+  display: grid;
+  place-content: center;
+  color: white;
+}
+
+.post .body {
+  flex: 60%;
+  background: rgb(244, 244, 244);
+  padding: 0 14px;
+  display: grid;
+  place-content: center;
+}
+
+.post .footer {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: black;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.post .footer .rightFooter {
+  display: flex; flex-direction: column; align-items: center; 
+}
+
+.link-no-underline {
+  color: white;
+  text-decoration: none;
+}
+
+/* CREATE POST PAGE CSS */
+
+.createPostPage {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border: 3.5px solid black;
+  background-color: rgb(243, 243, 243);
+  border-radius: 5px;
+}
+
+.formContainer #inputCreatePost {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.formContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  font-size: large;
+}
+
+.formContainer button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+span {
+  color: red;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.navbar:hover{ box-shadow: 5px 10px 10px gray; }
+.navbar .links {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: 600;
+}
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar a {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  text-decoration: none;
+  color: white;
+}
+.navbar a:hover{
+  height: 100%;
+  background-color: rgb(76, 76, 76);
+  border-radius: 8px;
+}
+
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: large;
+  background-color: white;
+}
+
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSide .addCommentContainer {
+  flex: 20%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 25px;
+}
+
+.addCommentContainer input,
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+
+.addCommentContainer button {
+  background-color: rgb(75, 75, 75); cursor: pointer;
+  color: white; font-size: medium; font-weight: 600;
+  border-bottom: 2px solid white;
+} 
+
+.addCommentContainer input {
+  outline:none; border-bottom: 2px solid gray; padding-left: 10px; font-size: medium;
+}
+
+.rightSide .listOfComments {
+  flex: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listOfComments .comment {
+  width: 70%;
+  height: auto;
+  padding: 30px;
+  border: 1px solid lightgray;
+  background-color: rgb(241, 241, 241);
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: large;
+}
+
+#individual {
+  height: 500px;
+  width: 600px;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 30px;
+}
+
+#individual .body {
+  font-size: 25px;
+  padding: 0 20px;
+}
+
+/* LOGIN */
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  font-size: large;
+}
+
+.loginContainer input,
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  margin: 10px;
+}
+
+.loginContainer button {
+  background-color: rgb(74, 74, 74);
+  color: white; font-size: large; cursor: pointer;
+}
+
+.loginContainer input{
+  outline: none; border-bottom: 2px solid gray; padding-left: 10px; font-size: large;
+}
+
+.user {
+  color: white; cursor: pointer;
+}
+.user .link-no-underline:hover {
+   color: yellow; background-color: black;
+}
+
+.loggedInContainer{
+  margin-right: 20px; gap: 20px;
+}
+
+/* .loggedInContainer h2:hover{
+   color: rgb(238, 255, 0);
+} */
+
+.loggedInContainer .logout{ color: white; font-weight: bold; font-size: large; }
+
+/* Comment */
+.displayedComment {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.dltCmnt {
+  background-color: red;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* //Profile Page */
+.profileLike{
+  width: 25px; height: 25px; color: aqua; cursor: pointer;
+}
+.basicInfo{ text-align: center;}
+.basicInfo .editIcon{ width: 30px; height: 30px; padding: 4px; border-radius: 5px; cursor: pointer;}
+.editIcon:hover { background-color: black; color: white;}
+
+/* Post - Footer */
+.icon{
+  color: white;
+  width: 23px; height: 22px;
+}
+
+.dltPost{
+  width: 33px; height: 33px;
+}
+
+.countLike{ color: white;}
+
+.likeIcon{
+  width: 25px; height: 25px; color: rgb(67, 231, 67); cursor: pointer;
+}
+.unlikeIcon{
+  width: 25px; height: 25px; color: rgb(255, 46, 46); cursor: pointer;
+}
+
+.PgNtFnd{
+  font-size: 60px; font-style: italic;
+  color: rgb(197, 25, 25); text-shadow: 1px 3px 3px black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
